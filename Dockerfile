@@ -30,7 +30,7 @@ COPY package.json package.json
 COPY README.md README.md
 COPY requirements.txt requirements.txt
 COPY setup.py setup.py
-COPY pygments-adsi-lexer pygments-adsi-lexer
+COPY extra-lexers extra-lexers
 
 # Perform build and cleanup artifacts
 RUN \
@@ -38,7 +38,7 @@ RUN \
     git \
     git-fast-import \
     openssh \
-  && cd pygments-adsi-lexer && python setup.py install && cd .. \
+  && cd extra-lexers && python setup.py install && cd .. \
   && python setup.py install \
   && rm -rf /tmp/*
 

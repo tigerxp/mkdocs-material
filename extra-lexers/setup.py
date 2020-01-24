@@ -1,11 +1,11 @@
 from setuptools import setup, find_packages
 
 setup (
-    name='adsilexer',
+    name='pygments_extra_lexers',
 
-    version='0.0.1',
-    description='Pygments ADSI custom lexer.',
-    keywords='pygments adsi lexer',
+    version='0.0.2',
+    description='Pygments extra lexers (currently only ADSI).',
+    keywords='pygments lexers adsi',
     license='MIT',
 
     author='tigerxp',
@@ -17,6 +17,6 @@ setup (
     entry_points =
     """
     [pygments.lexers]
-    adsilexer = adsilexer:AdsiLexer
+    extra_lexers = pygments_extra_lexers:AdsiLexer
     """,
 )
