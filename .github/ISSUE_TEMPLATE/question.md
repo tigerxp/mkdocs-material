@@ -4,7 +4,6 @@ about: The issue tracker is not for questions. Please ask your question on Stack
 title: ''
 labels: ''
 assignees: ''
-
 ---
 
 __THE ISSUE TRACKER IS NOT FOR QUESTIONS.__  

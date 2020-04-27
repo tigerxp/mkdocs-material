@@ -48,8 +48,17 @@ setup(
     author = package["author"]["name"],
     author_email = package["author"]["email"],
     keywords = package["keywords"],
-    classifiers = package["classifiers"],
-    packages = find_packages(),
+    classifiers = [
+        "Development Status :: 5 - Production/Stable",
+        "Environment :: Web Environment",
+        "License :: OSI Approved :: MIT License",
+        "Programming Language :: JavaScript",
+        "Programming Language :: Python",
+        "Topic :: Documentation",
+        "Topic :: Software Development :: Documentation",
+        "Topic :: Text Processing :: Markup :: HTML"
+    ],
+    packages = find_packages(exclude = ["src"]),
     include_package_data = True,
     install_requires = install_requires,
     entry_points = {
