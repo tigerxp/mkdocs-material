@@ -143,6 +143,8 @@ export class Search {
         for (const fn of pipeline)
           this.pipeline.add(lunr[fn])
 
+        console.log('config = ', config)
+
         /* Set up alternate search languages */
         if (config.lang.length === 1 && config.lang[0] !== "en") {
           this.use((lunr as any)[config.lang[0]])
@@ -190,8 +192,12 @@ export class Search {
     if (value) {
       try {
 
+        console.log('search value = "' + value + '"')
+
         /* Group sections by containing article */
-        const groups = this.index.search(value)
+        const lunrRes = this.index.search(value)
+        console.log('lunr results:', lunrRes)
+        const groups = lunrRes
           .reduce((results, result) => {
             const document = this.documents.get(result.ref)
             if (typeof document !== "undefined") {
@@ -206,6 +212,7 @@ export class Search {
             return results
           }, new Map<string, lunr.Index.Result[]>())
 
+        console.log('groups = ', groups)
         /* Create highlighter for query */
         const fn = this.highlight(value)
 
